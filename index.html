@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainF**K Compiler</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon"  href="Brain_skull.png">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-warning bg-gradient" data-bs-theme="dark">
+        <div class="container-fluid  ms-5">
+          <a class="navbar-brand" href="#"><img src="Brain_skull.png" width="60"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <h1 class="text-light">BrainF**K Compiler</h1>
+          </div>
+        </div>
+      </nav>
+      <main class="d-flex flex-column  p-2 justify-content-center align-items-center">
+        <div class="has-danger">
+            <label class="form-label mt-4" for="code">Code:</label>
+            <input type="text"  class="form-control" placeholder="Write your BF Code Here..." id="code">
+            <div class="invalid-feedback">is-invalid</div>
+        </div>
+        <div class="has-danger">
+            <label class="form-label mt-4" for="input">Input:</label>
+            <input type="text"  class="form-control" placeholder="Set your Input..." id="input">
+            <div class="invalid-feedback">is-invalid</div>
+        </div>
+        <fieldset>
+            <label class="form-label mt-4" for="Output">Output:</label>
+            <input class="form-control" id="Output" type="text" placeholder="output here..." readonly="">
+        </fieldset>
+        <table class="cheatable mt-5">
+
+            <tbody><tr>
+            <th style="text-align:center;">Character
+            </th>
+            <th class="ps-5" align="center">Meaning
+            </th></tr>
+            <tr>
+            <td style="text-align:center"><code>&gt;</code>
+            </td>
+            <td>Increment the data pointer</a> by one (to point to the next cell to the right).
+            </td></tr>
+            <tr>
+            <td style="text-align:center"><code>&lt;</code>
+            </td>
+            <td>Decrement the data pointer by one (to point to the next cell to the left).
+            </td></tr>
+            <tr>
+            <td style="text-align:center"><code>+</code>
+            </td>
+            <td>Increment the byte at the data pointer by one.
+            </td></tr>
+            <tr>
+            <td style="text-align:center"><code>-</code>
+            </td>
+            <td>Decrement the byte at the data pointer by one.
+            </td></tr>
+            <tr>
+            <td style="text-align:center"><code>.</code>
+            </td>
+            <td>Output the byte at the data pointer.
+            </td></tr>
+            <tr>
+            <td style="text-align:center"><code>,</code>
+            </td>
+            <td>Accept one byte of input, storing its value in the byte at the data pointer.
+            </td></tr>
+            <tr>
+            <td style="text-align:center"><code>[</code>
+            </td>
+            <td>If the byte at the data pointer is zero, then instead of moving the instruction pointer</a> forward to the next command, jump</a> it <i>forward</i> to the command after the <i>matching</i> <code>]</code> command.
+            </td></tr>
+            <tr>
+            <td style="text-align:center"><code>]</code>
+            </td>
+            <td>If the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it <i>back</i> to the command after the <i>matching</i> <code>[</code> command.</sup>
+            </td></tr></tbody></table>
+      </main>
+</body>
+</html>

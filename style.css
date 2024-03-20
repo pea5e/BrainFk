@@ -1,0 +1,16 @@
+@font-face {
+    font-family: brainflowers;
+    src: url("BrainFlowers.ttf");
+}
+nav {
+    font-family: brainflowers;
+}
+body{
+    /*background-image: url("electricity.gif");*/
+    background-size: 100%;
+    background-color: pink;
+    background-blend-mode: difference;
+}
+input{
+    width: 50vw !important;
+}
