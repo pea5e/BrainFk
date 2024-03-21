@@ -28,32 +28,26 @@
         <div class="has-danger">
             <label class="form-label mt-2" for="code">Code:</label>
             <textarea type="text"  class="form-control" placeholder="Write your BF Code Here..." id="code" rows="4" cols="50" maxlength="1000"></textarea>
+            <p class="code-interpreter"></p>
             <!--input type="text"  class="form-control" placeholder="Write your BF Code Here..." id="code"-->
-            <div class="invalid-feedback">is-invalid</div>
+            <div class="invalid-feedback" id="error"></div>
         </div>
-        <div class="has-danger">
+        <div>
             <label class="form-label mt-4" for="input">Input:</label>
             <input type="text"  class="form-control" placeholder="Set your Input..." id="input">
-            <div class="invalid-feedback">is-invalid</div>
         </div>
-        <fieldset>
+        <div>
             <label class="form-label mt-4" for="Output">Output:</label>
             <input class="form-control" id="Output" type="text" placeholder="Output here..." readonly="">
-        </fieldset>
+        </div>
         <button type="button" class="btn mt-5 compile">
           <span class="material-symbols-outlined" style="font-size: 30px;">play_arrow</span>
           <h6><strong>RUN</strong></h5>
         </button>
-        <div class="btn-toolbar">
-          <div class="btn-group me-2 mt-5" >
-            <button type="button" class="btn border border-black btn-light">1</button>
-            <button type="button" class="btn border border-black btn-light">2</button>
-            <button type="button" class="btn border border-black btn-warning">3</button>
-            <button type="button" class="btn border border-black btn-light">4</button>
-            <button type="button" class="btn border border-black btn-light">5</button>
-            <button type="button" class="btn border border-black btn-light">6</button>
-            <button type="button" class="btn border border-black btn-light">7</button>
-            <button type="button" class="btn border border-black btn-light">8</button>
+        <div class="btn-toolbar" >
+          <div class="btn-group me-2 mt-5" style="display: none;" >
+            <button type="button" class="btn border border-black btn-warning">0</button>
+            <!-- <button type="button" class="btn border border-black btn-warning">3</button> -->
           </div>
         </div>
         <h4 class="mt-5">CheatSheet</h4>
