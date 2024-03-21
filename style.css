@@ -73,9 +73,12 @@ body{
 .compile:hover{
     background-color: #E3F2FD49;
 }
-input , textarea{
+input , textarea , .code-interpreter{
     width: 50vw !important;
     overflow: scroll;
+}
+.highlighted{
+    background-color: rgb(163, 23, 23);
 }
 ::-webkit-scrollbar {
     width: 10px;
