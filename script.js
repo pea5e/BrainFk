@@ -22,6 +22,8 @@ runbutton.addEventListener("click",(e)=>{
         buttonicon.classList.add("rotate")
         buttontext.innerText = "RUNNING..."
         buffelements.style.display = "block";
+        if (codeinput.className.includes("is-invalid"))
+                codeinput.classList.remove("is-invalid");
         // codeinterpreter = ;
         output.value = '';
         buffelements.innerHTML = '<button type="button" class="btn border border-black btn-warning">0</button>'
@@ -79,7 +81,7 @@ runbutton.addEventListener("click",(e)=>{
                         index=code.length;
                     }
                     else
-                        buffer[buffindex] = input[readindex++];
+                        buffer[buffindex] = input.charCodeAt(readindex++);
                     break;
                 case '.' :
                     output.value += String.fromCharCode(buffer[buffindex]);
