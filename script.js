@@ -15,7 +15,7 @@ const codeinterpreter = document.getElementsByClassName("code-interpreter")[0]
 
 runbutton.addEventListener("click",(e)=>{
         var code = codeinput.value;
-        var input = document.getElementById("Output").value
+        var input = document.getElementById("input").value
         var buttonicon = runbutton.getElementsByTagName("span")[0]
         var buttontext = runbutton.getElementsByTagName("strong")[0]
         buttonicon.innerText = "sync"
