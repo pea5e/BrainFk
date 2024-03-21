@@ -46,7 +46,7 @@ runbutton.addEventListener("click",(e)=>{
                         newnode.innerHTML = '0';
                         buffelements.appendChild(newnode)
                     }
-                    buffelements.getElementsByTagName("button")[buffindex-1].className = "btn border border-black btn-warning";
+                    buffelements.getElementsByTagName("button")[buffindex].className = "btn border border-black btn-warning";
                     break;
                 case '<':
                     if (buffindex==0)
@@ -80,8 +80,10 @@ runbutton.addEventListener("click",(e)=>{
                     }
                     else
                         buffer[buffindex] = input[index++];
+                    break;
                 case '.' :
                     output.value += String.fromCharCode(buffer[buffindex]);
+                    break;
                 case '[' :
                     if (buffer[buffindex] == 0)
                     {
