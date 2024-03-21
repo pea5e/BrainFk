@@ -72,14 +72,14 @@ runbutton.addEventListener("click",(e)=>{
                     buffelements.getElementsByTagName("button")[buffindex].innerHTML = buffer[buffindex].toString();
                     break;
                 case ',' :
-                    if (index==input.length)
+                    if (readindex==input.length)
                     {
                         codeinput.classList.add("is-invalid");
                         error.innerHTML = "Input Out of range! You wanted to ',' read empty. at "+index.toString();
                         index=code.length;
                     }
                     else
-                        buffer[buffindex] = input[index++];
+                        buffer[buffindex] = input[readindex++];
                     break;
                 case '.' :
                     output.value += String.fromCharCode(buffer[buffindex]);
