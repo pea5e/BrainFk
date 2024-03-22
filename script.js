@@ -8,14 +8,22 @@ const error = document.getElementById("error")
 
 const output = document.getElementById("Output")
 
+const inp = document.getElementById("input")
+
 const buffelements = document.getElementsByClassName("btn-group")[0]
 
 const codeinterpreter = document.getElementsByClassName("code-interpreter")[0]
 
+document.body.onload  = (e)=>{
+    if(document.cookie.startsWith("lastcode="))
+        codeinput.value = document.cookie.split('=')[1]
+}
+
+
 
 runbutton.addEventListener("click",(e)=>{
         var code = codeinput.value;
-        var input = document.getElementById("input").value
+        var input = inp.value
         var buttonicon = runbutton.getElementsByTagName("span")[0]
         var buttontext = runbutton.getElementsByTagName("strong")[0]
         buttonicon.innerText = "sync"
@@ -31,7 +39,11 @@ runbutton.addEventListener("click",(e)=>{
         var index = 0;
         var readindex = 0; 
         var buffindex = 0; 
-
+        // var kill = setTimeout(()=>{
+        //     console.log("kill");
+        //     location.reload();
+        // }, 3000)
+        var time = (new Date()).getTime();
         while(index<code.length)
         {
             codeinterpreter.innerHTML = code.slice(0,index)+"<span class=\"highlighted\">"+code.substring(index,index+1)+"</span>"+code.slice(index+1,code.length)
@@ -116,7 +128,13 @@ runbutton.addEventListener("click",(e)=>{
                     }
                     break;
                 case ']' :
-                    if (buffer[buffindex] != 0)
+                    if((new Date()).getTime()-3000>time)
+                    {
+                        codeinput.classList.add("is-invalid");
+                        error.innerHTML = "Infinite Loop! code Timeout. at "+index.toString();
+                        index=code.length;
+                    }
+                    else if (buffer[buffindex] != 0)
                     {
                         var brackets = -1;
                         error.innerHTML = "Out of Range! You wanted to '['. at "+index.toString();
@@ -144,12 +162,14 @@ runbutton.addEventListener("click",(e)=>{
             }
             index++;
         }
+        // clearTimeout(kill);
         buttonicon.innerText = "play_arrow"
         buttonicon.classList.remove("rotate")
         buttontext.innerText = "RUN"
 });
 codeinput.addEventListener("change",(e)=>{
     codeinput.classList.remove("is-invalid");
+    document.cookie = `lastcode=${codeinput.value}; expires=Thu, 19 Dec 2030 12:00:00 UTC`;
 })
 /*codeinput.addEventListener("input",(e)=>{
     var code = codeinput.value;
