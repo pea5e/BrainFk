@@ -91,12 +91,13 @@ runbutton.addEventListener("click",(e)=>{
                         codeinput.classList.add("is-invalid");
                         error.innerHTML = "Warning! Input Out of range! You wanted to ',' read empty. at "+index.toString();
                         //index=code.length;
+                        buffer[buffindex] = 0;
                     }
                     else
                     {
                         buffer[buffindex] = input.charCodeAt(readindex++);
-                        buffelements.getElementsByTagName("button")[buffindex].innerHTML = buffer[buffindex].toString();
                     }
+                    buffelements.getElementsByTagName("button")[buffindex].innerHTML = buffer[buffindex].toString();
                     break;
                 case '.' :
                     output.value += String.fromCharCode(buffer[buffindex]);
