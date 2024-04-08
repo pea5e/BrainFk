@@ -167,9 +167,9 @@ runbutton.addEventListener("click",(e)=>{
         buttonicon.classList.remove("rotate")
         buttontext.innerText = "RUN"
 });
-codeinput.addEventListener("change",(e)=>{
+codeinput.addEventListener("input",(e)=>{
     codeinput.classList.remove("is-invalid");
-    document.cookie = `lastcode=${codeinput.value}; expires=Thu, 19 Dec 2030 12:00:00 UTC`;
+    document.cookie = `lastcode=${codeinput.value}; expires=Thu, 19 Dec 2030 12:00:00 UTC; path=/`;
 })
 /*codeinput.addEventListener("input",(e)=>{
     var code = codeinput.value;
