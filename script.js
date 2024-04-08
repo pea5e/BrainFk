@@ -89,8 +89,8 @@ runbutton.addEventListener("click",(e)=>{
                     if (readindex==input.length)
                     {
                         codeinput.classList.add("is-invalid");
-                        error.innerHTML = "Input Out of range! You wanted to ',' read empty. at "+index.toString();
-                        index=code.length;
+                        error.innerHTML = "Warning! Input Out of range! You wanted to ',' read empty. at "+index.toString();
+                        //index=code.length;
                     }
                     else
                     {
